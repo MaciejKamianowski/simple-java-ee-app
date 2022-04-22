@@ -7,11 +7,8 @@
 <title>Yahoo!!!! From JSP</title>
 </head>
 <%
-	System.out.println("Something2");
+	System.out.println(request.getParameter("name"));
 %>
-
-
-
 <body>
 My First JSP ${name}
 </body>
