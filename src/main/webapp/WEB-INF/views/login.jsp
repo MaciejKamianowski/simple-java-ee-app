@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,7 +9,7 @@
 </head>
 <%
 	System.out.println(request.getParameter("name"));
-	java.util.Date date = new java.util.Date();
+	Date date = new Date();
 %>
 <body>
 	My First JSP ${name}
