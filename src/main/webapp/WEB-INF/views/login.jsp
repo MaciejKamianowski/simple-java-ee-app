@@ -10,9 +10,9 @@
 <%
 	System.out.println(request.getParameter("name"));
 	Date date = new Date();
-%>
+%> 														<!-- SCRIPLET --- -->>
 <body>
-	My First JSP ${name}
-	<div>Current date <%=date%>></div>
+	My First JSP ${name}								<!-- EXPRESSION LANGUAGE -->>
+	<div>Current date <%=date%>></div>					<!-- SCRIPLET EXPRESSION -->>
 </body>
 </html>
