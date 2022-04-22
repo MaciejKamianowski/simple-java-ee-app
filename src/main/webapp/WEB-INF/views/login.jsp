@@ -6,6 +6,12 @@
 <meta charset="UTF-8">
 <title>Yahoo!!!! From JSP</title>
 </head>
+<%
+	System.out.println("Something2");
+%>
+
+
+
 <body>
 My First JSP ${name}
 </body>
