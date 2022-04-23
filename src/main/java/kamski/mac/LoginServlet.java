@@ -8,11 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kamski.mac.todo.TodoService;
+
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
 
-	private UserValidationService service = new UserValidationService();
-	
+	private UserValidationService userValidationService = new UserValidationService();
+	private TodoService todoService = new TodoService();
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -27,10 +29,10 @@ public class LoginServlet extends HttpServlet {
 		
 		String password = request.getParameter("password");
 		
-		boolean isUserValid = service.isUserValid(name, password);
+		boolean isUserValid = userValidationService.isUserValid(name, password);
 		if (isUserValid) {
 			request.setAttribute("name", name);
-			request.setAttribute("password", password);
+			request.setAttribute("todos", todoService.retrieveTodos());
 			request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
 		} else {
 			// error message

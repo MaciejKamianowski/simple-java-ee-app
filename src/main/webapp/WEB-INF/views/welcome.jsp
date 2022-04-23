@@ -7,6 +7,7 @@
 <title>Welcome</title>
 </head>
 <body>
-	Welcome ${name} and your password is ${password}
+	Welcome ${name} 
+	<p>${todos}</p>
 </body>
 </html>
