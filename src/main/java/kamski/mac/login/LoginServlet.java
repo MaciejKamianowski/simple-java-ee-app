@@ -1,4 +1,4 @@
-package kamski.mac;
+package kamski.mac.login;
 
 import java.io.IOException;
 
@@ -8,12 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import kamski.mac.LoginService;
 import kamski.mac.todo.TodoService;
 
 @WebServlet(urlPatterns = "/login.do")
 public class LoginServlet extends HttpServlet {
 
-	private UserValidationService userValidationService = new UserValidationService();
+	private LoginService userValidationService = new LoginService();
 	private TodoService todoService = new TodoService();
 	
 	@Override
