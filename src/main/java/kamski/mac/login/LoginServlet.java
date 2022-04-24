@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import kamski.mac.LoginService;
 import kamski.mac.todo.TodoService;
 
 @WebServlet(urlPatterns = "/login.do")
@@ -32,9 +31,9 @@ public class LoginServlet extends HttpServlet {
 		
 		boolean isUserValid = userValidationService.isUserValid(name, password);
 		if (isUserValid) {
-			request.setAttribute("name", name);
-			request.setAttribute("todos", todoService.retrieveTodos());
-			request.getRequestDispatcher("/WEB-INF/views/welcome.jsp").forward(request, response);
+			
+			// redirecting TodoServlet
+			response.sendRedirect("/todo.do");
 		} else {
 			// error message
 			request.setAttribute("errorMessage", "Invalid Credentials!");
