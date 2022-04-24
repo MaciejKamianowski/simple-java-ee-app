@@ -9,6 +9,7 @@
 <title>Todo</title>
 </head>
 <body>
+	<p>Welcome ${name}</p>
 	<p>Your Todo's are:</p>
 	<ol>
 		<c:forEach items="${todos}" var="todo">

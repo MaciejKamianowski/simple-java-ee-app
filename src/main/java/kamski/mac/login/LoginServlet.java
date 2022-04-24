@@ -33,6 +33,7 @@ public class LoginServlet extends HttpServlet {
 		if (isUserValid) {
 			
 			// redirecting TodoServlet
+			request.getSession().setAttribute("name", name);
 			response.sendRedirect("/todo.do");
 		} else {
 			// error message
